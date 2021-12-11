@@ -10,19 +10,17 @@ public class Ceasar extends Encryption {
     @Override
     public String encrypts(String input) {
         StringBuilder sb = new StringBuilder();
-        for (Character c : input.toCharArray()) {
-            if (' ' == c) {
+        for (Character letter : input.toCharArray()) {
+            if (' ' == letter) {
                 sb.append(' ');
             } else {
-                if (('z' - c) < offset) {
-                    sb.append((char) ('a' + (offset - ('z' - c) - 1)));
+                if (('z' - letter) < offset) {
+                    sb.append((char) ('a' + (offset - ('z' - letter) - 1)));
                 } else {
-                    sb.append((char) (c + offset));
+                    sb.append((char) (letter + offset));
                 }
             }
         }
         return new String(sb);
     }
-
-
 }
