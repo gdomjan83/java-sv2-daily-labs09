@@ -11,8 +11,18 @@ public class Ceasar extends Encryption {
     public String encrypts(String input) {
         StringBuilder sb = new StringBuilder();
         for (Character c : input.toCharArray()) {
-            sb.append((char) (c + offset));
+            if (' ' == c) {
+                sb.append(' ');
+            } else {
+                if (('z' - c) < offset) {
+                    sb.append((char) ('a' + (offset - ('z' - c) - 1)));
+                } else {
+                    sb.append((char) (c + offset));
+                }
+            }
         }
         return new String(sb);
     }
+
+
 }

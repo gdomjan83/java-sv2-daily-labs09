@@ -11,6 +11,10 @@ class CeasarTest {
     @Test
     void testEncryption() {
         assertEquals("defg", ceasar.encrypts("abcd"));
-        assertEquals("grj", ceasar.encrypts("dog"));
+        assertEquals("grz", ceasar.encrypts("dow"));
+        assertEquals("gra", ceasar.encrypts("dox"));
+        assertEquals("grb", ceasar.encrypts("doy"));
+        assertEquals("grc", ceasar.encrypts("doz"));
+        assertEquals("gr c", ceasar.encrypts("do z"));
     }
 }
