@@ -10,7 +10,7 @@ public class Ceasar extends Encryption {
     @Override
     public String encrypts(String input) {
         StringBuilder sb = new StringBuilder();
-        for (Character letter : input.toCharArray()) {
+        for (Character letter : input.toLowerCase().toCharArray()) {
             if (' ' == letter) {
                 sb.append(' ');
             } else {
